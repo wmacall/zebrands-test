@@ -42,7 +42,9 @@ export const SearchScreen = <T,>({
         onChangeText={onSearch}
       />
       {hasError ? <ErrorComponent /> : null}
-      {isLoading ? <Spinner color="$warmGray700" size="small" /> : null}
+      {isLoading ? (
+        <Spinner testID="spinner-search" color="$warmGray700" size="small" />
+      ) : null}
       {!isLoading && !hasError ? (
         <FlatList
           data={data}

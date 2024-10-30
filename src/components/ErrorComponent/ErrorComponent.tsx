@@ -6,7 +6,7 @@ export const ErrorComponent = () => {
   const {bottom} = useSafeAreaInsets();
 
   return (
-    <Center flex={1} gap="$16" paddingBottom={bottom}>
+    <Center testID="error-search" flex={1} gap="$16" paddingBottom={bottom}>
       <Image
         w={100}
         h={100}

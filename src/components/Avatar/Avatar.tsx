@@ -13,6 +13,6 @@ interface AvatarProps {
 export const Avatar = ({uri, fallbackText}: AvatarProps) => (
   <AvatarThemed bgColor="$blueGray300" size="sm" borderRadius="$full">
     <AvatarFallbackText>{fallbackText}</AvatarFallbackText>
-    <AvatarImage source={{uri}} alt={fallbackText} />
+    <AvatarImage testID="avatar-image" source={{uri}} alt={fallbackText} />
   </AvatarThemed>
 );

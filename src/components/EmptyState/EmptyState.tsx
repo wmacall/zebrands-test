@@ -7,7 +7,7 @@ interface EmptyStateProps {
 
 export const EmptyState = ({hasSearched}: EmptyStateProps) => {
   return (
-    <Center flex={1} gap="$16">
+    <Center testID="empty-search" flex={1} gap="$16">
       <Image
         w={100}
         h={100}
