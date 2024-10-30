@@ -24,7 +24,6 @@ export const useGithubSearch = () => {
     setHasError(false);
 
     if (query.trim() === '') {
-      console.log('here');
       setUsers([]);
       setIsLoading(false);
       return;
@@ -36,7 +35,6 @@ export const useGithubSearch = () => {
         setUsers(response.data.items);
         setIsLoading(false);
       } catch (error) {
-        console.log('error', error);
         setIsLoading(false);
         setSearchResults([]);
         setIsLoading(false);
