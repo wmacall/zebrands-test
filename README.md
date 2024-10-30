@@ -1,10 +1,12 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+ # ZebrandsTest
 
-# Getting Started
+This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [@react-native-community/cli](https://github.com/react-native-community/cli).
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Getting Started
 
-## Step 1: Start the Metro Server
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+
+### Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
@@ -13,10 +15,29 @@ To start Metro, run the following command from the _root_ of your React Native p
 ```bash
 # using npm
 npm start
+```
 
-# OR using Yarn
+ Or using Yarn
+```bash
 yarn start
 ```
+
+### Installing pods
+
+For `ios` you must install the pods. You can do this by running one of the following commands:
+
+```bash
+# using npx
+npx pod-install
+```
+
+ Or navigating to the `ios` directiory
+```bash
+cd ios
+pod install
+```
+
+For `android` its not needed
 
 ## Step 2: Start your Application
 
@@ -46,34 +67,49 @@ If everything is set up _correctly_, you should see your new app running in your
 
 This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-## Step 3: Modifying your App
+If everything is set up correctly, you should see your new app running in your Android Emulator or iOS Simulator shortly provided you have set up your emulator/simulator correctly.
 
-Now that you have successfully run the app, let's modify it.
+This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+# Step 3: Modifying your App
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+### XCode issues
 
-## Congratulations! :tada:
+Find the `ENABLE_USER_SCRIPT_SANDBOXING` setting in Xcode. Go to the Search icon tab in the left-hand panel within Xcode and change its value from `YES` to `NO`.
 
-You've successfully run and modified your React Native App. :partying_face:
+> **Note**: Do this step if you have issues when trying to run the app.
 
-### Now what?
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+# Libraries Used
 
-# Troubleshooting
+- **[Gluestack v1](https://www.npmjs.com/package/@gluestack-ui/themed)**: Used for the entire design of the application to accelerate the UI creation process.
+- **[axios](https://www.npmjs.com/package/axios)**: For making API calls.
+- **[react-native-bootsplash](https://www.npmjs.com/package/react-native-bootsplash)**: For the splash screen.
+- **[react-navigation](https://reactnavigation.org/)**: For navigation throughout the app.
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+Images for empty states were sourced from [Flaticon](https://www.flaticon.com/).
 
-# Learn More
+## Running Tests
 
-To learn more about React Native, take a look at the following resources:
+To run the tests, execute the following command in the terminal:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+```bash
+npm run test
+```
+
+
+# Demo
+
+### iOS
+
+https://github.com/user-attachments/assets/f737982c-9c62-4fe4-85e9-eace11f43d52
+
+### Android
+
+https://github.com/user-attachments/assets/db937b7d-f83b-4b1c-87cc-b72e72fb16be
+
+
+
+### Download the apk
+
+https://drive.google.com/file/d/1J_oTqEC3qF4GZYUB2YhpCQCZXv8mM_Jn/view?usp=sharing
