@@ -1,34 +1,24 @@
 import React from 'react';
-import {View} from '@gluestack-ui/themed';
-import {Header, Input} from '../../components';
 import {useGithubSearch} from '../../hooks';
-import {FlatList, ListRenderItem, ViewStyle} from 'react-native';
 import {User} from '../../api';
-import {UserRow} from '../../components/UserRow';
+import {ListRenderItem} from 'react-native';
+import {SearchScreen, UserRow} from '../../components';
 
 export const UsersScreen = () => {
-  const {searchQuery, users, onSearchUser} = useGithubSearch();
+  const {searchQuery, users, onSearchUser, isLoading} = useGithubSearch();
 
   const renderItem: ListRenderItem<User> = ({item}) => <UserRow {...item} />;
 
-  const flatListStyle: ViewStyle = {
-    flex: users.length === 0 ? 1 : undefined,
-    paddingBottom: 52,
-  };
-
   return (
-    <View flex={1}>
-      <Header />
-      <Input value={searchQuery} onChangeText={onSearchUser} />
-      <FlatList
-        data={users}
-        keyExtractor={item => item.id.toString()}
-        bounces={false}
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}
-        renderItem={renderItem}
-        contentContainerStyle={flatListStyle}
-      />
-    </View>
+    <SearchScreen
+      title="Users"
+      placeholder="Search users"
+      searchQuery={searchQuery}
+      data={users}
+      onSearch={onSearchUser}
+      renderItem={renderItem}
+      keyExtractor={item => item.id.toString()}
+      isLoading={isLoading}
+    />
   );
 };
